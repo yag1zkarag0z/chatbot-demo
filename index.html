@@ -10,23 +10,27 @@
       }
 
       body {
-        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+       font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
         background-color: #f0f2f5;
-        height: 100vh;
+        height: 100dvh; /* 100vh yerine mobil uyumlu 100dvh */
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0;
       }
 
       .app-container {
-        width: 600px;
-        height: 100vh;
+        .app-container {
+        width: 100%;        /* Ekran küçükse %100'ünü kapla */
+        max-width: 600px;   /* Ekran büyükse maksimum 600px ol */
+        height: 100dvh;     /* Mobildeki menü çubuklarına göre yüksekliği ayarla */
         background: #ffffff;
         border-radius: 20px;
         box-shadow: 0 8px 40px rgba(0,0,0,0.12);
         display: flex;
         flex-direction: column;
         overflow: hidden;
+      }
       }
 
       /* Header */
@@ -262,7 +266,11 @@
 
 
 
-
+@media (max-width: 600px) {
+        .app-container {
+          border-radius: 0;
+        }
+      }
 
 
 
