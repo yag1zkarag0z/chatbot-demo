@@ -10,20 +10,22 @@
       }
 
       body {
-       font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
         background-color: #f0f2f5;
-        height: 100dvh; /* 100vh yerine mobil uyumlu 100dvh */
+        min-height: 100dvh;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0;
+        padding: 20px; /* Bilgisayarda üstten/alttan boşluk bırakır */
       }
 
-      .app-container {
+     
         .app-container {
-        width: 100%;        /* Ekran küçükse %100'ünü kapla */
-        max-width: 600px;   /* Ekran büyükse maksimum 600px ol */
-        height: 100dvh;     /* Mobildeki menü çubuklarına göre yüksekliği ayarla */
+      width: 100%;
+        max-width: 420px; /* Bilgisayarda tam bir telefon genişliği */
+        height: 85vh; /* Bilgisayarda çok uzamasın, ekranın %85'i olsun */
+        max-height: 850px;
         background: #ffffff;
         border-radius: 20px;
         box-shadow: 0 8px 40px rgba(0,0,0,0.12);
@@ -31,7 +33,7 @@
         flex-direction: column;
         overflow: hidden;
       }
-      }
+      
 
       /* Header */
       .chat-header {
@@ -267,8 +269,15 @@
 
 
 @media (max-width: 600px) {
+        body {
+          padding: 0; /* Mobilde dış boşlukları sıfırla */
+        }
+        
         .app-container {
-          border-radius: 0;
+          max-width: 100%;
+          height: 100dvh; /* Mobilde ekranın tamamını kapla */
+          max-height: none; /* Bilgisayardaki boy sınırını kaldır */
+          border-radius: 0; /* Mobilde köşeler düz olsun */
         }
       }
 
